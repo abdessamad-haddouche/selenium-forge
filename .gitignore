@@ -1,0 +1,332 @@
+# ==========================================
+# Python
+# ==========================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ==========================================
+# Selenium Specific
+# ==========================================
+
+# WebDriver binaries
+drivers/
+chromedriver*
+geckodriver*
+msedgedriver*
+safaridriver*
+
+# Browser profiles and data
+browser_profiles/
+browser_data/
+user_data/
+
+# Screenshots and test outputs
+screenshots/
+test_screenshots/
+selenium_screenshots/
+*.png
+*.jpg
+*.jpeg
+!assets/*.png
+!assets/*.jpg
+!assets/*.jpeg
+!docs/**/*.png
+!docs/**/*.jpg
+
+# Selenium logs
+selenium.log
+geckodriver.log
+chromedriver.log
+webdriver.log
+*.log
+
+# Download directories from automation
+downloads/
+temp_downloads/
+
+# Browser cache
+.cache/
+
+# ==========================================
+# selenium-forge Specific
+# ==========================================
+
+# Package generated directories
+selenium_forge_data/
+.selenium_forge/
+
+# Configuration cache
+config_cache/
+.config_cache/
+
+# Driver installation cache
+driver_cache/
+.driver_cache/
+
+# Temporary files
+temp/
+tmp/
+.tmp/
+
+# ==========================================
+# Development Tools
+# ==========================================
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# Operating Systems
+# ==========================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ==========================================
+# Development Dependencies (Optional)
+# ==========================================
+
+# Exclude development requirements
+requirements-dev.txt
+
+# Local configuration overrides
+local_config.yml
+local_config.yaml
+.local/
+
+# ==========================================
+# CI/CD and Deployment
+# ==========================================
+
+# GitHub Actions artifacts
+.github/workflows/artifacts/
+
+# Local build scripts output
+build_output/
+release_output/
+
+# ==========================================
+# Documentation
+# ==========================================
+
+# Sphinx build outputs (if using Sphinx)
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# MkDocs
+site/
+
+# ==========================================
+# Security and Sensitive Data
+# ==========================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Secret keys and credentials
+secrets/
+credentials/
+*.key
+*.pem
+*.crt
+
+# API keys (common names)
+api_keys.txt
+api_keys.json
+config_secrets.yml
+
+# ==========================================
+# Performance and Profiling
+# ==========================================
+
+# Profiling outputs
+*.prof
+*.profile
+profile_*.txt
+
+# Memory dumps
+*.dump
+*.dmp
+
+# Benchmark results
+benchmark_results/
+performance_logs/

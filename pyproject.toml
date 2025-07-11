@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selenium-forge"
+version = "0.1.0"
+description = "Utilities for managing Selenium WebDriver—driver installation, session handling, stealth, and more."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name="Abdessamad Haddouche", email="abdessamad.hadd@gmail.com" }
+]
+dependencies = [
+  "selenium>=4.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/abdessamad-haddouche/selenium-forge"
+Issues = "https://github.com/abdessamad-haddouche/selenium-forge/issues"
