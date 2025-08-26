@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import traceback
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, TypeVar
 
 # ================================================================
 # Base Exception Error Classes
 # ================================================================
 
+T = TypeVar('T', bound='SeleniumForgeError')
 
 class SeleniumForgeError(Exception):
     """Base exception for all selenium-forge errors.
@@ -62,7 +63,7 @@ class SeleniumForgeError(Exception):
             "traceback": self.traceback_str,
         }
 
-    def add_context(self, key: str, value: Any) -> SeleniumForgeError:
+    def add_context(self: T, key: str, value: Any) -> T:
         """Add context information to the exception.
 
         Args:
@@ -85,6 +86,7 @@ class SeleniumForgeError(Exception):
         self.context[key] = value
 
         return self
+
 
     def __str__(self) -> str:
         """String representation of the exception."""
