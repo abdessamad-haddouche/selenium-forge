@@ -1,0 +1,185 @@
+[build-system]
+requires = ["hatchling>=1.13.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "selenium-forge"
+dynamic = ["version"]
+description = "Selenium WebDriver toolkit with automatic setup, stealth mode, and cross-platform support"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Abdessamad Haddouche", email = "abdessamad.hadd@gmail.com"},
+]
+maintainers = [
+    {name = "Abdessamad Haddouche", email = "abdessamad.hadd@gmail.com"},
+]
+keywords = [
+    "selenium",
+    "webdriver",
+    "automation",
+    "testing",
+    "browser",
+    "stealth",
+    "cross-platform",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "selenium>=4.15.0",
+    "requests>=2.28.0",
+    "pyyaml>=6.0",
+    "click>=8.0.0",
+    "packaging>=21.0",
+    "platformdirs>=3.0.0",
+    "typing-extensions>=4.0.0; python_version<'3.10'",
+]
+
+[project.optional-dependencies]
+stealth = [
+    "undetected-chromedriver>=3.5.0",
+    "fake-useragent>=1.4.0",
+]
+performance = [
+    "psutil>=5.9.0",
+    "aiohttp>=3.8.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "mypy>=1.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "pre-commit>=3.0.0",
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+]
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "sphinx-autodoc-typehints>=1.22.0",
+    "myst-parser>=1.0.0",
+]
+all = [
+    "selenium-forge[stealth,performance,dev,docs]"
+]
+
+[project.urls]
+Homepage = "https://github.com/abdessamad-haddouche/selenium-forge"
+Documentation = "https://selenium-forge.readthedocs.io"
+Repository = "https://github.com/abdessamad-haddouche/selenium-forge"
+Issues = "https://github.com/abdessamad-haddouche/selenium-forge/issues"
+Changelog = "https://github.com/abdessamad-haddouche/selenium-forge/blob/main/CHANGELOG.md"
+
+[project.scripts]
+selenium-forge = "selenium_forge.cli.main:main"
+sforge = "selenium_forge.cli.main:main"
+
+[tool.hatch.version]
+path = "src/selenium_forge/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/selenium_forge"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["selenium_forge"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "undetected_chromedriver.*",
+    "fake_useragent.*",
+]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+check_untyped_defs = false
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "requires_browser: marks tests that require a real browser",
+    "requires_internet: marks tests that require internet connection",
+]
+
+[tool.coverage.run]
+source = ["src/selenium_forge"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__main__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
