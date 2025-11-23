@@ -1,0 +1,38 @@
+# Performance Optimized Configuration
+# For fast web scraping and data collection
+
+browser: chrome
+driver_version: latest
+
+browser_options:
+  headless: true
+  window_size: [1280, 720]
+
+  # Disable resource-heavy features
+  disable_images: true
+  disable_css: false
+  disable_plugins: true
+
+  arguments:
+    - --disable-gpu
+    - --no-sandbox
+    - --disable-dev-shm-usage
+    - --disable-extensions
+    - --disable-logging
+    - --mute-audio
+    - --disable-background-networking
+    - --disable-default-apps
+    - --disable-sync
+    - --metrics-recording-only
+    - --no-first-run
+
+  preferences:
+    profile.default_content_setting_values.notifications: 2
+    profile.default_content_settings.images: 2
+    profile.managed_default_content_settings.images: 2
+
+# Reduced timeouts for faster operation
+implicit_wait: 5.0
+page_load_timeout: 30.0
+script_timeout: 20.0
+log_level: WARNING

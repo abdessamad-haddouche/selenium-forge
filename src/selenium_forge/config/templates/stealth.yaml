@@ -1,0 +1,50 @@
+# Stealth Mode Configuration
+# Optimized for avoiding bot detection
+
+browser: chrome
+driver_version: latest
+
+browser_options:
+  headless: false
+  start_maximized: true
+  window_size: [1920, 1080]
+
+  arguments:
+    - --disable-blink-features=AutomationControlled
+    - --disable-dev-shm-usage
+    - --no-sandbox
+    - --disable-infobars
+    - --disable-plugins
+    - --disable-popup-blocking
+    - --profile-directory=Default
+    - --start-maximized
+
+  preferences:
+    profile.default_content_setting_values.notifications: 2
+    credentials_enable_service: false
+    profile.password_manager_enabled: false
+    plugins.always_open_pdf_externally: true
+
+  experimental_options:
+    excludeSwitches:
+      - enable-automation
+      - enable-logging
+    useAutomationExtension: false
+    prefs:
+      profile.default_content_settings.popups: 0
+
+# Full stealth mode enabled
+stealth:
+  enabled: true
+  hide_webdriver: true
+  randomize_user_agent: true
+  mask_fingerprint: true
+  remove_automation_flags: true
+  randomize_canvas: true
+  randomize_webgl: true
+  randomize_audio: true
+
+implicit_wait: 10.0
+page_load_timeout: 60.0
+script_timeout: 30.0
+log_level: INFO

@@ -46,6 +46,7 @@ dependencies = [
     "click>=8.0.0",
     "packaging>=21.0",
     "platformdirs>=3.0.0",
+    "webdriver-manager>=4.0.0",
     "typing-extensions>=4.0.0; python_version<'3.10'",
 ]
 

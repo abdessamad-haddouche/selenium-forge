@@ -1,0 +1,29 @@
+# Headless Mode Configuration
+# For running browsers without GUI (servers, CI/CD)
+
+browser: chrome
+driver_version: latest
+
+browser_options:
+  # Headless mode enabled
+  headless: true
+
+  # Window size is required in headless mode
+  window_size: [1920, 1080]
+
+  arguments:
+    - --disable-gpu
+    - --no-sandbox
+    - --disable-dev-shm-usage
+    - --disable-software-rasterizer
+    - --disable-extensions
+    - --disable-logging
+    - --log-level=3
+
+  preferences:
+    profile.default_content_setting_values.notifications: 2
+
+implicit_wait: 10.0
+page_load_timeout: 60.0
+script_timeout: 30.0
+log_level: WARNING

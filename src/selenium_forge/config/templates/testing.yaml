@@ -1,0 +1,32 @@
+# Testing Configuration
+# Optimized for automated testing (pytest, unittest, etc.)
+
+browser: chrome
+driver_version: latest
+
+browser_options:
+  headless: true
+  window_size: [1920, 1080]
+
+  arguments:
+    - --disable-gpu
+    - --no-sandbox
+    - --disable-dev-shm-usage
+    - --disable-extensions
+    - --disable-logging
+    - --log-level=3
+    - --ignore-certificate-errors
+    - --allow-insecure-localhost
+
+  preferences:
+    profile.default_content_setting_values.notifications: 2
+    credentials_enable_service: false
+
+# Shorter timeouts for faster test execution
+implicit_wait: 5.0
+page_load_timeout: 30.0
+script_timeout: 20.0
+
+# Less verbose logging during tests
+log_level: WARNING
+enable_logging: true
