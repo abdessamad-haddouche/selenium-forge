@@ -1,0 +1,91 @@
+# Advanced Selenium Forge Configuration
+# This configuration includes all available options
+
+# Browser configuration
+browser: chrome
+driver_version: latest
+
+# Advanced browser options
+browser_options:
+  # Display settings
+  headless: false
+  start_maximized: true
+  window_size: [1920, 1080]
+
+  # Browser binary and profile
+  binary_location: null
+  profile_directory: null
+
+  # Extensions (list of .crx file paths)
+  extensions: []
+
+  # Performance optimizations
+  disable_images: false
+  disable_javascript: false
+  disable_css: false
+  disable_plugins: false
+
+  # Download settings
+  download_directory: null
+  auto_download: true
+
+  # Custom command-line arguments
+  arguments:
+    - --disable-blink-features=AutomationControlled
+    - --disable-dev-shm-usage
+    - --no-sandbox
+
+  # Browser preferences (browser-specific)
+  preferences:
+    profile.default_content_setting_values.notifications: 2
+    credentials_enable_service: false
+    profile.password_manager_enabled: false
+
+  # Experimental options (browser-specific)
+  experimental_options:
+    excludeSwitches:
+      - enable-automation
+      - enable-logging
+    useAutomationExtension: false
+
+# Stealth mode configuration
+stealth:
+  enabled: true
+  hide_webdriver: true
+  randomize_user_agent: true
+  mask_fingerprint: true
+  remove_automation_flags: true
+
+  # Custom user agent (null for random)
+  custom_user_agent: null
+
+  # Fingerprint randomization
+  randomize_canvas: true
+  randomize_webgl: true
+  randomize_audio: true
+
+  # Locale settings
+  timezone: null
+  locale: null
+  languages: null
+
+# Proxy configuration
+proxy:
+  host: proxy.example.com
+  port: 8080
+  type: http  # http, https, socks4, socks5
+  username: null
+  password: null
+  no_proxy: []
+
+# Timeouts
+implicit_wait: 10.0
+page_load_timeout: 60.0
+script_timeout: 30.0
+
+# Additional capabilities
+capabilities: {}
+
+# Logging
+log_level: INFO
+enable_logging: true

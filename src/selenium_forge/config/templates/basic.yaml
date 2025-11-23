@@ -1,0 +1,34 @@
+# Basic Selenium Forge Configuration
+# This is a minimal configuration file for getting started
+
+# Browser type (chrome, firefox, edge, safari)
+browser: chrome
+
+# Driver version (use 'latest' for automatic version detection)
+driver_version: latest
+
+# Browser options
+browser_options:
+  # Run in headless mode (no GUI)
+  headless: false
+
+  # Start browser maximized
+  start_maximized: true
+
+  # Custom window size (width x height) - null for default
+  window_size: null
+
+  # Path to browser binary (null for auto-detection)
+  binary_location: null
+
+  # Profile directory (null for temporary profile)
+  profile_directory: null
+
+# Timeouts in seconds
+implicit_wait: 10.0
+page_load_timeout: 60.0
+script_timeout: 30.0
+
+# Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+log_level: INFO
+enable_logging: true

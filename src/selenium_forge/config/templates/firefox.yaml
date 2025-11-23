@@ -1,0 +1,43 @@
+# Firefox Configuration
+# Optimized settings for Mozilla Firefox
+
+browser: firefox
+driver_version: latest
+
+browser_options:
+  headless: false
+  start_maximized: true
+  window_size: null
+
+  arguments: []
+
+  # Firefox-specific preferences
+  preferences:
+    # Disable WebDriver detection
+    dom.webdriver.enabled: false
+    useAutomationExtension: false
+
+    # Enable Marionette protocol
+    marionette.enabled: true
+
+    # Disable notifications
+    dom.webnotifications.enabled: false
+    dom.push.enabled: false
+
+    # Performance settings
+    browser.cache.disk.enable: true
+    browser.cache.memory.enable: true
+
+    # Privacy settings
+    privacy.trackingprotection.enabled: false
+    geo.enabled: false
+
+    # Download settings
+    browser.download.folderList: 2
+    browser.download.manager.showWhenStarting: false
+    browser.helperApps.neverAsk.saveToDisk: application/pdf
+
+implicit_wait: 10.0
+page_load_timeout: 60.0
+script_timeout: 30.0
+log_level: INFO
